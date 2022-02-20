@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--++++++++++  TITULO DE PAGINA - LLAMADO AL CSS - FAVICON +++++++++-->
+    <title>Juego del Ahorcado</title>
+    <link  rel="icon"   href="img/icon.png" type="image/png" />
+    <link rel="stylesheet" href="css/estilo.css" >
+</head>
+
+<body>
+   <!--++++++++++  LOGO DE ALURA  +++++++++-->
+  <img class="logo" src="Img/logoalura.png" alt="Logo-Alura"/>
+    
+  <!--++++++++++  MAIN CONTENEDOR PRINCIPAL   +++++++++-->
+  <main id="contendorPrincipal" class="contenedorGlobal">
+      <img class="image" src="img/img_ahorcado.png" alt="juego_ahorcado">
+      <h1 class="tituloPrincipal">Juego del Ahorcado</h1>
+      <div class="contenedor_botones">
+          <button class="boton estiloBoton" id="btnIniciarJuego" > 
+               <span>Iniciar Juego</span> 
+          </button>
+         
+            <button class="boton estiloBoton" id="registrarPalabra">
+                  <span>Registrar Nueva Palabra</span> 
+            </button>
+          
+      </div>
+  </main>
+
+ <!--++++++++++ SESION DE INICIAR EL JUEGO +++++++++-->
+  <section id="contenedorIniciarJuego" class="contenedor">
+
+    <div class="tituloJuegoAhorcado">
+      <h1>Juguemos al Ahorcado</h1>
+    </div>
+
+    <div class="contenedorIniciarJuego">
+        <div class="derecho">
+          <canvas id="pantallaCanvas" width= "300px" height="500px">
+            TU navegador no acepta canvas, no se puede dibujar
+          </canvas>
+        </div>
+        
+        <div class="izquierdo" >
+              <div  id="estado">
+                
+              </div>
+              <div id="revelacion">
+                <!-- aqui se muestran si ganaste o perdiste-->
+              </div>
+              <div  id="letrasEscondidas" class="letrasEscondidas">
+                <!-- aqui se muestran las letras escondidas en guion bajo-->
+              </div>
+              <div class="errores" id="errores">
+              <!-- aqui se muestran las letras perdidas que el usuario instriduzca-->
+              </div>
+              <div id="vidas">
+                Las Oportunidades restante son: 6
+              </div>  
+              <div>
+                <input id="letras" onkeypress="return /[A-Z]/i.test(event.key)" class="estiloInput" type="text" <!--onkeypress="return soloLetras(event)--> "> 
+              </div> 
+              <div class="repetida" id="repetida">
+                <!-- aqui se muestran las letras repetida que el usuario instriduzca-->
+              </div>
+              <div class="botonera">
+                <!--<button id="btnJugarNuevo" class="botonesJuegos estiloBoton"> <span>Jugar de Nuevo</span> </button>-->
+                <button id="btnRetirar" class="botonesJuegos estiloBoton"> <span>Desistir</span> </button>
+              </div>
+        </div>
+    </div>
+  </section>
+
+   <!--++++++++++  SESION DE AGREGAR PALABRA +++++++++-->
+  <section id="agregarPalabra" class="contenedorAgregarPalabra">
+    <div>
+      <h1 class="tituloPrincipal titulo">Registrar Palabra</h1>
+      <input class="inpAgregarPalabra" type="text" id="ingresarPalabra" placeholder="Escribe una nueva palabra">
+      <button  id="btnRegistrar" class="boton estiloBoton btn_espacio">
+        <span>Registrar Palabra</span> 
+      </button>
+      <button id="btnInicio" class="boton estiloBoton btn_espacio">
+        <span>Ir al Inicio</span> 
+      </button>
+    </div>
+  </section>  
+
+   <!--++++++++++  PIE DE PAGINA +++++++++-->
+   <footer class="realizadoX">
+      <p>Todos los derechos reservados | © 2022 Mairet González</p>
+   </footer>
+
+    <!--++++++++++  LLAMADO AL JAVASCRIPT +++++++++-->
+    <script src="js/canvas.js"></script>
+    <script src="js/palabras.js"></script>
+    <script src="js/botones.js"></script>
+    <script src="js/funciones.js"></script>
+</body>
+</html>
